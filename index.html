@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce storefront</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-logo border">
+                <div class="logo"></div>
+            </div>
+            
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
+
+<div id="userGreeting" style="display: none; margin: 20px; font-size: 18px; font-weight: bold;"></div>
+
+
+            <div class="nav-address">
+                <p>Deliver to</p>
+                <div class="add-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>India</p>
+                </div>
+            </div>
+            <div class="nav-search">
+                <input type="text" id="searchBox" class="search-input" placeholder="Search here...">
+                <button class="search-button">Search</button>
+                <div id="suggestions" class="suggestions-box"></div>
+            </div>
+
+            <div class="nav-login">
+                <button id="openLogin" class="login-btn">Login</button>
+            </div>
+        </div>
+        <div class="banner-row">
+    <img src="fronti1.jpg" alt="Banner 1" class="banner-img">
+    <img src="fronti.jpg" alt="Banner 2" class="banner-img">
+</div>
+
+    </header>
+    <main>
+  <section class="product-grid">
+    <div class="product-card">
+      <img src="fruit_1.jpg" class="product-img" alt="Fresh strawberry">
+      <h4 class="product-name">Fresh strawberry</h4>
+      <p class="product-price">₹120/kg</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="fruit_2.jpg" class="product-img" alt="Fresh orange">
+      <h4 class="product-name">Fresh orange</h4>
+      <p class="product-price">₹140/kg</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="fruit_3.jpg" class="product-img" alt="Fresh Apple">
+      <h4 class="product-name">Fresh Apple</h4>
+      <p class="product-price">₹100/kg</p>
+      <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+    <div class="product-card">
+      <img src="fruit_4.jpg" class="product-img" alt="orange">
+      <h4 class="product-name">orange</h4>
+      <p class="product-price">₹130/kg</p>
+      <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+      <img src="fruit_5.jpg" class="product-img" alt="Fresh cucumber">
+      <h4 class="product-name">Fresh cucumber</h4>
+      <p class="product-price">₹100/kg</p>
+      <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+      <img src="veg_1.jpg" class="product-img" alt="Fresh cabbage">
+      <h4 class="product-name">Fresh cabbage</h4>
+      <p class="product-price">₹50/kg</p>
+      <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+      <img src="veg_2.jpg" class="product-img" alt="onion">
+      <h4 class="product-name">onion</h4>
+      <p class="product-price">₹30/kg</p>
+      <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+      <img src="veg_3.jpg" class="product-img" alt="potato">
+      <h4 class="product-name">potato</h4>
+      <p class="product-price">₹40/kg</p>
+      <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+            <img src="veg_4.jpg" class="product-img" alt="Mix veg pack">
+            <h4 class="product-name">Mix veg pack</h4>
+            <p class="product-price">₹70/kg</p>
+            <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+            <img src="product_1.jpg" class="product-img" alt="chocolate">
+            <h4 class="product-name">chocolate</h4>
+            <p class="product-price">₹70</p>
+            <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+            <img src="product_2.jpg" class="product-img" alt="campsicum">
+            <h4 class="product-name">campsicum</h4>
+            <p class="product-price">₹70/kg</p>
+            <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+            <img src="product_3.jpg" class="product-img" alt="Biscuit">
+            <h4 class="product-name">Biscuit</h4>
+            <p class="product-price">₹10/pis</p>
+            <button class="add-to-cart">Add to Cart</button>
+      </div>
+  </section>
+</main>
+<script>
+  const modal = document.getElementById("loginModal");
+  const openBtn = document.getElementById("openLogin");
+  const closeBtn = document.querySelector(".close");
+  const loginForm = document.getElementById("loginForm");
+  const userGreeting = document.getElementById("userGreeting");
+
+  openBtn.onclick = () => modal.style.display = "block";
+  closeBtn.onclick = () => modal.style.display = "none";
+
+  window.onclick = (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  loginForm.onsubmit = function(e) {
+    e.preventDefault(); // Stop form from reloading page
+
+    const username = document.getElementById("username").value;
+    
+    modal.style.display = "none";
+    userGreeting.style.display = "block";
+    userGreeting.textContent = `Welcome, ${username}!`;
+  };
+</script>
+
+<script>
+  const products = [
+    "Fresh Apple",
+    "Fresh Banana",
+    "Tomato",
+    "Carrot",
+    "Broccoli",
+    "Mango",
+    "Orange"
+  ];
+
+  const searchBox = document.getElementById("searchBox");
+  const suggestions = document.getElementById("suggestions");
+
+  searchBox.addEventListener("input", () => {
+    const input = searchBox.value.toLowerCase();
+    suggestions.innerHTML = "";
+
+    if (input.trim() === "") return;
+
+    const matches = products.filter(item =>
+      item.toLowerCase().includes(input)
+    );
+
+    matches.forEach(item => {
+      const div = document.createElement("div");
+      div.textContent = item;
+      div.onclick = () => {
+        searchBox.value = item;
+        suggestions.innerHTML = "";
+      };
+      suggestions.appendChild(div);
+    });
+  });
+</script>
+
+</body>
+</html>
